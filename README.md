@@ -1,4 +1,4 @@
-1. Balloting For Corporate Governance: Modernization of rigid Annual General Meetings of Shareholders.
+Balloting For Corporate Governance: Modernization of rigid Annual General Meetings of Shareholders.
 
 Problem with current system:
 
