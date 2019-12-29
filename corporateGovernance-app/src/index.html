@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>XYZ Company</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1 align="center"><span stylr="color: #2F4F4F">XYZ Corporation Ltd.</span></h1>
+    <!--<div class="row" id="panels_contract">
+        <div class="col-md-6">-->
+    <div class="panel panel-default">
+        <div class="panel-heading">Current Ballot</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <h6><span style="color: green">Ballot Creator:</span> <span id="address"></span></h6>
+                        <h6><span style="color: green">Ballot:</span><span id="officialname"></span></h6>
+                        <h6><span style="color: green">Proposal:</span> <span id="proposal"></span></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</div>-->
+    <div class="row" id="panels_contract">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Vote Details</div>
+                <div class="panel-body">
+                    <p>
+                        <h6><span style="color: green">Current Phase:</span> <span id="phase"></span></h6>
+                        <input onclick="return App.changeState(this);" type="button" value="Start Vote" id="state_change" style="float: right;"></input>
+                    </p>
+                    <h6><span style="color: green">Ballot Access Level:</span><span id="access_level"></span></h6>
+                    <h6><span style="color: green">Total Voters Registered:</span> <span id="tVoter"></span></h6>
+                    <h6><span style="color: green">Total Share Weight Registered:</span> <span id="totalShares"></span></h6>
+                    <h6><span style="color: green">Total Voter Voted:</span> <span id="totalVotes"></span></h6>
+                    <h6><span style="color: green">Total Share Vote:</span> <span id="totalShareVote"></span></h6>
+                    <h6><span style="color: green">Final Result:</span> <span id="finalResult"></span></h6>
+                </div>
+            </div>
+        </div>
+        <!--</div>-->
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Register User</div>
+                <div class="main">
+                    <form onsubmit="App.registerUser(); return false;">
+                        <p>
+                            <label>Address :</label>
+                            <input id="user_address" name="user_address" placeholder="Address">
+                        </p>
+                        <p>
+                            <label>Number of Shares :</label>
+                            <input id="shares_held" name="shares_held" placeholder="No. of Shares:">
+                        </p>
+                        <p>
+                            <label>Position :</label>
+                            <input id="investor" name="access_level" type="radio" value=1 checked>
+                            <label>Investor</label>
+                            <input id="Manager" name="access_level" type="radio" value=3>
+                            <label>Manager</label>
+                            <input id="Director" name="access_level" type="radio" value=5>
+                            <label>Director</label>
+                        </p>
+                        <button type="submit">Register User</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="panels_voter">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Add Proxy Voter</div>
+                <div class="main">
+                    <form onsubmit="App.proxyVoter(); return false;">
+                        <p>
+                            <label>Address :</label>
+                            <input id="proxy_address" name="proxy_address" placeholder="Proxy Address">
+                        </p>
+                        <button type="submit">Add Proxy</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Add Shares</div>
+                <div class="main">
+                    <form onsubmit="App.addShares(); return false;">
+                        <p>
+                            <label>Additional Shares :</label>
+                            <input id="newShares" name="new_shares" placeholder="Additional Shares">
+                        </p>
+                        <button type="submit">Add Proxy</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Cast Vote</div>
+        <div class="main">
+            <form onsubmit="App.vote(); return false;">
+                <p>
+                    <input id="yes" name="vote" type="radio" value=1 checked>
+                    <label>AGREE</label>
+                    <input id="no" name="vote" type="radio" value=2>
+                    <label>DISAGREE</label>
+                </p>
+                <button type="submit">Cast Vote</button>
+            </form>
+        </div>
+    </div>
+    <div>
+        <button onclick="App.getVoter()">Current Voter</button>
+        <div>
+            <ul id="voterdetails">
+                <!-- Events will appear here from app.js -->
+            </ul>
+        </div>
+    </div>
+    <div>
+        <ul id="eventsList">
+            <!-- Events will appear here from app.js -->
+        </ul>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/dist/bootstrap.min.js"></script>
+    <script src="js/dist/web3.min.js"></script>
+    <script src="js/dist/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

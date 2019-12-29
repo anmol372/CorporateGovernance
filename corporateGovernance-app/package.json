@@ -1,0 +1,15 @@
+{
+  "name": "corporategovernance-app",
+  "version": "1.0.0",
+  "description": "Balloting For Corporate Governance: Modernization of rigid Annual General Meetings of Shareholders",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "anmolrastogi",
+  "license": "ISC",
+  "dependencies": {
+    "express:": "^4.16.4",
+    "web3": "github:ethereum/web3.js"
+  }
+}
